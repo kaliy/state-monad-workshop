@@ -1,5 +1,5 @@
 #  Using Functional State in Actors
-This project is used for workshop [Scala Summer Camp #1: Using Functional State in Actors](https://www.meetup.com/pl-PL/Krakow-Scala-User-Group/events/263171988/).
+This project is used for workshop [Scala Summer Camp #1: Using Functional State in Actors](https://www.meetup.com/pl-PL/Krakow-Scala-User-Group/events/263171988/). Slides for workshop are [here](https://docs.google.com/presentation/d/145eJgOup8CKicd7B7GFTZiUvsYvu1icMvGz45Sk5ttk/edit?usp=sharing)
 
 Requirements:
 - git
