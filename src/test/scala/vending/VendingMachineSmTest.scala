@@ -11,6 +11,8 @@ class VendingMachineSmTest extends WordSpec with Matchers {
   val now: LocalDate = LocalDate.of(2018, 10, 1)
   private val beer = Product(3, "1", Symbols.beer, LocalDate.of(2020, 12, 10))
   private val pizza = Product(100, "2", Symbols.pizza, LocalDate.of(2018, 12, 10))
+
+  //base state to use in tests
   var vendingMachineState = VendingMachineState(
     credit = 0, income = 0,
     quantity = Map(
@@ -18,6 +20,60 @@ class VendingMachineSmTest extends WordSpec with Matchers {
       pizza -> 1
     )
   )
+
+
+  "update credit monad" should {
+
+    "update credit when insert" in {
+      //Can use base state without changes
+      fail("not implemented")
+    }
+
+    "clear credit when withdrawn is selected" in {
+      //Copy base state, set credit to 5
+      fail("not implemented")
+    }
+
+  }
+
+  "select product monad" should {
+    "successfully buy product" in {
+      fail("not implemented")
+    }
+    "refuse to buy if not enough of money" in {
+      fail("not implemented")
+    }
+  }
+
+  "detect shortage monad" should {
+    "detect shortage" in {
+      fail("not implemented")
+    }
+    "ignore shortage for a second time" in {
+      fail("not implemented")
+    }
+  }
+
+  "expiry date monad" should {
+
+    "find expired products" in {
+      fail("not implemented")
+    }
+
+    "ignore expired products if already reported" in {
+      fail("not implemented")
+    }
+
+    "check that all products are ok" in {
+      fail("not implemented")
+    }
+  }
+
+  "detect money box almost full monad" should {
+    "notify if money box is almost full" in {
+      fail("not implemented")
+    }
+  }
 
   "Vending machine" should {
 
@@ -61,57 +117,6 @@ class VendingMachineSmTest extends WordSpec with Matchers {
       fail("not implemented")
     }
 
-  }
-
-  "expiry date monad" should {
-
-    "find expired products" in {
-      fail("not implemented")
-    }
-
-    "ignore expired products if already reported" in {
-      fail("not implemented")
-    }
-
-    "check that all products are ok" in {
-      fail("not implemented")
-    }
-  }
-
-  "update credit monad" should {
-
-    "update credit when insert" in {
-      fail("not implemented")
-    }
-
-    "clear credit when withdrawn is selected" in {
-      fail("not implemented")
-    }
-
-  }
-
-  "select product monad" should {
-    "successfully buy product" in {
-      fail("not implemented")
-    }
-    "refuse to buy if not enough of money" in {
-      fail("not implemented")
-    }
-  }
-
-  "detect shortage monad" should {
-    "detect shortage" in {
-      fail("not implemented")
-    }
-    "ignore shortage for a second time" in {
-      fail("not implemented")
-    }
-  }
-
-  "detect money box almost full monad" should {
-    "notify if money box is almost full" in {
-      fail("not implemented")
-    }
   }
 
 }

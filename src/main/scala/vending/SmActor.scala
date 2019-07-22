@@ -26,13 +26,15 @@ class SmActor(quantity: Map[Product, Int],
 
   override def receive: Receive = {
     case a: Action =>
-      //Build logic with VendingMachineSm
-      //run logic with current state and capture new state + result
-      //update state
-      //execute side effects by sending messages
-      // systemReports to reportsActor
-      // userOutputs to userReportActor
+    // TODO
+    // Build logic with VendingMachineSm for selected action and timestamp
+    // run logic with current state and capture new state + result
+    // update state
+    // execute side effects by sending messages
+    // systemReports to reportsActor
+    // userOutputs to userReportActor
 
+    // Used for test
     case GetState => sender() ! vendingMachineState
   }
 }
