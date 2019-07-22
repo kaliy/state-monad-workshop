@@ -1,5 +1,7 @@
 package vending
 
+import java.time.LocalDate
+
 import scala.concurrent.duration._
 import scala.language.postfixOps
 
@@ -26,13 +28,10 @@ class SmActor(quantity: Map[Product, Int],
 
   override def receive: Receive = {
     case a: Action =>
-    // TODO
-    // Build logic with VendingMachineSm for selected action and timestamp
-    // run logic with current state and capture new state + result
-    // update state
-    // execute side effects by sending messages
-    // systemReports to reportsActor
-    // userOutputs to userReportActor
+      val (newState, result) = VendingMachineSm.compose(a,LocalDate.now()).run(vendingMachineState).value
+      vendingMachineState = newState
+      result.userOutputs.foreach(userReportActor ! _)
+      result.systemReports.foreach(reportsActor ! _)
 
     // Used for test
     case GetState => sender() ! vendingMachineState
